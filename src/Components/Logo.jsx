@@ -4,9 +4,12 @@ export default function () {
   return (
     <div className=' relative flex flex-1 justify-center items-center w-full h-full text-white' >
         {/* lines */}
-     <div className=' flex w-[1000000px] h-[10px] bg-white absolute top-[-60px] text-black'></div>
-     <div className=' flex w-[1000000px] h-[6px] bg-white absolute top-[-40px] text-black'></div>
+      
+        <div className=' flex w-screen h-[10px] bg-white absolute top-[-60px] text-black'></div>
+     <div className=' flex w-screen h-[6px] bg-white absolute top-[-40px] text-black'></div>
 
+      
+     
 
      {/* img  */}
      <div className='absolute bg-white h-[170px] w-[170px] rounded-full top-[-140px]' > </div>
