@@ -3,7 +3,7 @@ import foodImg from '../assets/pexels-pixabay-533325.jpg';
 import threeMeat from '../assets/threeMeat.jpg';
 
 
-export default function Meals({mealName,price,meats,sides,select, img, description}) {
+export default function Meals({mealName,price,meats,sides,select, img, description,details}) {
 
     function clicked() {
 
@@ -11,21 +11,14 @@ export default function Meals({mealName,price,meats,sides,select, img, descripti
     }
 
   return (
-    <button onClick={clicked} className='flex bg-slate-300 rounded h-[200px] outline'>
-        <div className=' h-[200px] w-[150px] flex flex-col justify-between '>
-       <div className='p-2 flex flex-col items-start'>
-       <h1 className=' flex text-start text-[1.1rem]'>{mealName}</h1>
-        <p className='text-[0.9rem]'>{meats}</p>
-        <p className='text-[0.9rem]'>{sides}</p>
-       </div>
-        <div className='p-2 flex align-top'>
-        ${price}
-        </div>
-        </div>
-       <div className=' flex flex-col justify-center items-start bg-slate-100 h-[200px] w-[200px] p-2'>
+    <button onClick={clicked} className='flex bg-slate-300 rounded h-[300px] outline'>
+       <div className=' flex flex-col justify-center items-start bg-red-600  h-[300px] w-[200px] p-2'>
         <img className=' h-[100px] w-[100%]' src={img} alt="food img" />
-        <div className='flex flex-1 w-[100%] justify-center items-center bg-slate-200 rounded'>
-          <p>{description}</p>
+        <div className=' my-1 flex flex-col flex-1 w-[100%] justify-center items-center bg-black rounded overflow-auto'>
+        <div className='text-white text-[1.3rem]'>{mealName}</div>
+        <p className='text-white'>${price}</p>
+          <p className='text-white text-[0.9rem] overflow-auto'>{description}</p>
+          <p className=' text-[0.7rem] text-white' >{details}</p>
         </div>
          </div>
     </button>

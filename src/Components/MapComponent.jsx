@@ -17,7 +17,7 @@ L.Icon.Default.mergeOptions({
 
 function MapComponent() {
   // Set the location coordinates (latitude, longitude)
-  const position = [34.642990, -97.165770];
+  const position = [34.64253174989456, -97.17481454337575];
 
   return (
 

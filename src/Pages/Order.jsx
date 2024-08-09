@@ -16,16 +16,18 @@ export default function Order() {
         console.log("clicked")
     }
 
-    const mostPopular = useRef(null);
     const diners = useRef(null);
-    const baskets = useRef(null);
-    const salads = useRef(null);
+    const specialtyDinners = useRef(null);
+    const bBQBaskets = useRef(null);
+    const burgerBaskets = useRef(null);
+    const specialtyBaskets = useRef(null);
     const kidsMeals = useRef(null);
-    const specials = useRef(null);
-    const deserts = useRef(null);
+    const saladsPotato = useRef(null);
     const appetizers = useRef(null);
     const sides = useRef(null);
-    const drinks = useRef(null);
+    const drinks = useRef(null)
+    const desserts = useRef(null)
+    const details = useRef(null)
 
 
    function handleScroll(location) {
@@ -42,142 +44,208 @@ export default function Order() {
     <div className='flex flex-col bg-custom-image'>
     <Header/>
     <div className='flex flex-col'>
-        <div className='flex justify-evenly h-fit w-[100%] bg-amber-100/90 overflow-auto sticky top-[70px]'>
-            <button  onClick={ () => handleScroll(mostPopular)} className='hover:bg-slate-100 p-3' >Most Popular</button>
-            <button  onClick={ () => handleScroll(diners)} className='hover:bg-slate-100 p-3' >Diners</button>
-            <button  onClick={ () => handleScroll(baskets)} className='hover:bg-slate-100 p-3' >Baskets</button>
-            <button  onClick={ () => handleScroll(salads)} className='hover:bg-slate-100 p-3' >Salads</button>
-            <button  onClick={ () => handleScroll(kidsMeals)} className='hover:bg-slate-100 p-3' >Kids Meals</button>
-            <button  onClick={ () => handleScroll(specials)} className='hover:bg-slate-100 p-3' >Specials</button>
-            <button  onClick={ () => handleScroll(deserts)} className='hover:bg-slate-100 p-3' >Deserts</button>
-            <button  onClick={ () => handleScroll(appetizers)} className='hover:bg-slate-100 p-3' >Appetizers</button>
-            <button  onClick={ () => handleScroll(sides)} className='hover:bg-slate-100 p-3' >Sides</button>
-            <button onClick={ () => handleScroll(drinks)} className='hover:bg-slate-100 p-3' >Drinks</button>
-
-
+        <div className='flex justify-evenly h-fit w-[100%] bg-black/50 text-white overflow-auto sticky top-[110px]'>
+            <button  onClick={ () => handleScroll(diners)} className=' hover:text-black hover:bg-slate-100 p-3' >Diners</button>
+            <button  onClick={ () => handleScroll(specialtyDinners)} className='hover:text-black hover:bg-slate-100 p-3' >Specialty Diners</button>
+            <button  onClick={ () => handleScroll(bBQBaskets)} className='hover:text-black hover:bg-slate-100 p-3' >BBQ Baskets</button>
+            <button  onClick={ () => handleScroll(burgerBaskets)} className='hover:text-black hover:bg-slate-100 p-3' >Burger Baskets</button>
+            <button  onClick={ () => handleScroll(specialtyBaskets)} className='hover:text-black hover:bg-slate-100 p-3' >Specialty Baskets</button>
+            <button  onClick={ () => handleScroll(kidsMeals)} className=' hover:text-black hover:bg-slate-100 p-3' >Kids Meals</button>
+            <button  onClick={ () => handleScroll(saladsPotato)} className='hover:text-black hover:bg-slate-100 p-3' >Salads/ Potatoes</button>
+            <button  onClick={ () => handleScroll(appetizers)} className='hover:text-black hover:bg-slate-100 p-3' >Appetizers</button>
+            <button onClick={ () => handleScroll(sides)} className='hover:text-black hover:bg-slate-100 p-3' >Sides</button>
+            <button onClick={ () => handleScroll(drinks)} className='hover:text-black hover:bg-slate-100 p-3' >Drinks</button>
+            <button onClick={ () => handleScroll(desserts)} className='hover:text-black hover:bg-slate-100 p-3' >Deserts</button>
         </div>
 
-        <div ref={mostPopular}  className='flex flex-col items-center align-center' > 
-        <p className=' p-3 bg-slate-200/80 items-center text-center text-[1.5rem] w-screen m-8'>Most Popular</p>
-        <div className='flex items evenly justify-evenly gap-10 flex-1 flex-wrap '>
-        <Meals mealName={"Sliced Beef Diner"} price={16.00} meats={'Meats: 1'} sides={"Sides:2"} description={"sliced beef on a bun with a roll and hushpuppy" } img={threeMeat}/>
-        <Meals mealName={"Catfish Basket"} price={10.00} sides={"Sides:1"} description={"3 peices of catfish on a bun with a roll and hushpuppy"} img={comingSoon}/>
-        <Meals mealName={"Rib Dinner"} price={16.00} meats={'Meats: 1'}  sides={"Sides:2"} description={"sliced beef on a bun with a roll and hushpuppy"} img={threeMeat}/>
-        <Meals mealName={"2 Meat Diner"} price={18.00} meats={'Meats: 2'}  sides={"Sides:2"} description={"sliced beef on a bun with a roll and hushpuppy"} img={threeMeat}/>
-        </div>
-        </div>
+      {/* meals start */}
 
         <div ref={diners}  className='flex flex-col items-center align-center' > 
-        <p className=' p-3 bg-slate-200/80 items-center text-center text-[1.5rem] w-screen m-8' >Dinners</p>
+        <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8' >Dinners</p>
         <div className='flex items evenly justify-evenly gap-10 flex-1 flex-wrap '>
-        <Meals mealName={"Sliced Beef Diner"} price={16.00} meats={'Meats: 1'}  sides={"Sides:2"} description={"sliced beef on a bun with a roll and hushpuppy"} img={threeMeat}/>
-        <Meals mealName={"Chopped Beef Diner"} price={16.00} meats={'Meats: 1'}  sides={"Sides:2"} description={"sliced beef on a bun with a roll and hushpuppy"} img={threeMeat}/>
-        <Meals mealName={"Rib Dinner"} price={16.00} meats={'Meats: 1'}  sides={"Sides:2"} description={"sliced beef on a bun with a roll and hushpuppy"} img={threeMeat}/>
-        <Meals mealName={"Sausage Diner"} price={15.00} meats={'Meats: 1'}  sides={"Sides:2"}  description={"sliced beef on a bun with a roll and hushpuppy"} img={threeMeat}/>
-        <Meals mealName={"Hot Link Diner"} price={15.00} meats={'Meats: 1'}  sides={"Sides:2"}  description={"sliced beef on a bun with a roll and hushpuppy"} img={threeMeat}/>
-        <Meals mealName={"Pulled Pork Diner"} price={15.00} meats={'Meats: 1'}  sides={"Sides:2"}  description={"sliced beef on a bun with a roll and hushpuppy"} img={threeMeat}/>
-        <Meals mealName={"2 Meat Diner"} price={18.00} meats={'Meats: 2'}  sides={"Sides:2"}  description={"sliced beef on a bun with a roll and hushpuppy"} img={threeMeat}/>
-        <Meals mealName={"3 Meat Diner"} price={20.00} meats={'Meats: 3'}  sides={"Sides:2"} description={"sliced beef on a bun with a roll and hushpuppy"} img={threeMeat}/>
+        <Meals mealName={"Sliced Beef Diner"} price={16.00} description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
+        <Meals mealName={"Chopped Beef Diner"} price={16.00}  description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
+        <Meals mealName={"Rib Dinner"} price={16.00}  description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
+        <Meals mealName={"Sausage Diner"} price={15.00}   description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
+        <Meals mealName={"Hot Link Diner"} price={15.00}  description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
+        <Meals mealName={"Pulled Pork Diner"} price={15.00}  description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
+        <Meals mealName={"2 Meat Diner"} details={"No Double meat"} price={18.00} description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
+        <Meals mealName={"3 Meat Diner"} details={"No Double meat"} price={20.00} description={"sliced beef on a bun with a roll and hushpuppy"} img={threeMeat}/>
         </div>
         </div>
 
-        <div ref={baskets}   className='flex flex-col items-center align-center'  >
-            <p className=' p-3 bg-slate-200/80 items-center text-center text-[1.5rem] w-screen m-8' >Baskets</p>
+
+        <div ref={specialtyDinners}  className='flex flex-col items-center align-center'  >
+            <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8' >Specialty Dinners</p>
         <div className='flex items evenly justify-evenly gap-10 flex-1 flex-wrap '>
-        <Meals mealName={"Hamburger Basket"} price={10.00}  sides={"Sides:1"} img={burger}  description={"discription of the item"}/>
-        <Meals mealName={"Cheeseburger Basket"} price={11.00} sides={"Sides:1"} img={burger} description={"discription of the item"} />
-        <Meals mealName={"Mushroom Burger Basket"} price={12.00} sides={"Sides:1"}img={burger} description={"discription of the item"}/>
-        <Meals mealName={"Green Chili Burger Basket"} price={12.00}  sides={"Sides:1"}img={burger} description={"discription of the item"}/>
-        <Meals mealName={"Bacon Burger Basket"} price={12.00}  sides={"Sides:1"}img={burger} description={"discription of the item"}/>
-        <Meals mealName={"Grilled Onion Burger Basket"} price={12.00} sides={"Sides:1"} img={burger} description={"discription of the item"}/>
-        <Meals mealName={"Avocado Burger Basket"} price={12.00} sides={"Sides:1"} img={burger} description={"discription of the item"}/>
+        <Meals mealName={"Hamburger Steak Dinner"} price={14.00}   img={burger}  description={"Served With Grilled Onions, Sauteed Mushrooms & Brown Gravy. Comes with Mashed Potaots, Sourdough Toast & Choice Of 1 Side "}/>
+        <Meals mealName={"Chicken Fried Steak Dinner"} price={15.00} img={burger} description={"Served With White Gravy, Sourdough Toast. Comes with Mashed Potato & Choice Of 1 Side"} />
+        <Meals mealName={"Fried Catfish Dinner"} price={13.00} img={burger} description={"Served With 10 oz. Of Catfish, Choice Of 2 Sides & Hushpuppies"}/>
+        <Meals mealName={"Chicken Strip Dinner"} price={13.00} img={burger} description={"Served With 5 Strips, Gravy & Your Choice Of 2 Sides & Sourdough Toast"}/>
+        <Meals mealName={"Grilled Chicken Dinner"} price={13.00} img={burger} description={"Served With 8 oz. Grilled Chicken Breast, Your Choice Of 2 Sides & Sourdough Toast"}/>
+        <Meals mealName={"Smothered Chicken Dinner"} price={14.00} img={burger} description={"Served With 8 oz. Grilled Chicken Breast, Covered In Provolone Cheese, Grilled Onions & Mushrooms, Your Choice of 2 Sides And Sourdough Toast"}/>
             </div>
             </div>
 
 
-        <div ref={salads}    className='flex flex-col items-center align-center'   >
-            <p className='p-3 bg-slate-200/80 items-center text-center text-[1.5rem] w-screen m-8' >Salads</p>
+        <div  ref={bBQBaskets}  className='flex flex-col items-center align-center'   >
+            <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8' >BBQ Baskets</p>
         <div className='flex items evenly justify-evenly gap-10 flex-1 flex-wrap '>
-        <Meals mealName={"BBQ Salad"} price={12.00} meats={'Meats: 1'} img={threeMeat} description={"discription of the item"} />
-        <Meals mealName={"Cobb Salad"} price={10.00} img={threeMeat} description={"discription of the item"} />
-        <Meals mealName={"Grilled Chicken Salad"} price={12.00} img={threeMeat} description={"discription of the item"}/>
+        <Meals mealName={"Sliced Beef Sandwich"} details={"Sandwich Only $9"} price={12.00}  img={threeMeat} description={"Comes With 1 Side & a Drink"} />
+        <Meals mealName={"Chopped Beef Sandwich"} details={"Sandwich Only $9"} price={12.00} img={threeMeat} description={"Comes With 1 Side & a Drink"} />
+        <Meals mealName={"Pulled Pork Sandwich"} details={"Sandwich Only $9"} price={12.00} img={threeMeat} description={"Comes With 1 Side & a Drink"}/>
+        <Meals mealName={"Hot-Link Sandwich"} details={"Sandwich Only $9"} price={12.00}  img={threeMeat} description={"Comes With 1 Side & a Drink"} />
+        <Meals mealName={"Sausage Sandwich"} details={"Sandwich Only $9"}  price={12.00} img={threeMeat} description={"Comes With 1 Side & a Drink"} />
+        <Meals mealName={"BBQ Club Sandwich"} details={"Sandwich Only $9"} price={14.00} img={threeMeat} description={"Comes With 1 Side & a Drink"}/>
+        <Meals mealName={"Rib Basket"}  price={12.00} img={threeMeat} description={"Served With 3 Ribs, Choice of 1 Side & Sourdough Toast"}/>
             </div>
             </div>
 
-        <div ref={kidsMeals}   className='flex flex-col items-center align-center' >
-            <p className='p-3 bg-slate-200/80 items-center text-center text-[1.5rem] w-screen m-8' >Kids Meals</p>
+        <div ref={burgerBaskets}  className='flex flex-col items-center align-center' >
+            <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8' >Burger Baskets</p>
         <div className='flex items evenly justify-evenly gap-10 flex-1 flex-wrap '>
-        <Meals mealName={"Chicken Strip Basket"} price={8.00} meats={'Meats: 1'}  sides={"Sides:1"}  img={threeMeat} description={"discription of the item"}/>
-        <Meals mealName={"Kids Chopped Beef Diner"} price={8.00} meats={'Meats: 1'}  sides={"Sides:1"} img={threeMeat} description={"discription of the item"}/>
-        <Meals mealName={"Grilled Cheese Basket"} price={6.00} sides={"Sides:1"} img={threeMeat} description={"discription of the item"}/>
-        <Meals mealName={"Kids Rib Basket"} price={9.00} meats={'Meats: 1'}  sides={"Sides:1"} img={threeMeat} description={"discription of the item"} />
+        <Meals mealName={"Hamburger Basket"} details={"Burger Only $8"} price={10.00}  sides={"Sides:1"}  img={threeMeat} description={"Served With All Burger Toppings With Choice Of 1 Side & Drink"}/>
+        <Meals mealName={"CheeseBurger Basket"} details={"cheeseburger Only $8"} price={11.00}  sides={"Sides:1"} img={threeMeat} description={"Served With All Burger Toppings With Choice Of 1 Side & Drink"}/>
+        <Meals mealName={"Mushroom Burger Basket"} details={"Burger Only $9"} price={12.00}  img={threeMeat} description={"Served With All Burger Toppings + Sauteed Mushrooms With Choice Of 1 Side & Drink"}/>
+        <Meals mealName={"Green Chili Burger Basket"} details={"Burger Only $8"} price={12.00}   sides={"Sides:1"} img={threeMeat} description={"Served With All Burger Toppings + Green Chili's With Choice Of 1 Side & Drink"} />
+        <Meals mealName={"Bacon Burger Basket"} details={"Burger Only $9"} price={12.00} img={threeMeat} description={"Served With All Burger Toppings + Applewood Bacon With Choice Of 1 Side & Drink"}/>
+        <Meals mealName={"Grilled Onion Burger Basket"} details={"Burger Only $8"} price={12.00} img={threeMeat} description={"Served With All Burger Toppings + Grilled Onions With Choice Of 1 Side & Drink"}/>
+        <Meals mealName={"Avocado Burger Basket"} details={"Burger Only $9"} price={12.00} img={threeMeat} description={"Served With All Burger Toppings + Sliced Avocado With Choice Of 1 Side & Drink"}/>
             </div>
             </div>
 
-        <div ref={specials}  className='flex flex-col items-center align-center'  >
-        <p className='p-3 bg-slate-200/80 items-center text-center text-[1.5rem] w-screen m-8' >Specials</p>
+
+
+
+
+
+ 
+        <div ref={specialtyBaskets}  className='flex flex-col items-center align-center'  >
+        <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8' >Specialty Baskets</p>
         <div className='flex items evenly justify-evenly gap-10 flex-1 flex-wrap '>
-        <Meals mealName={"Catfish Basket"} price={10.00} sides={"Sides:1"} img={threeMeat} description={"discription of the item"}/>
-        <Meals mealName={"French Dip Basket"} price={13.00} sides={"Sides:1"} img={threeMeat} description={"discription of the item"} />
-        <Meals mealName={"Loaded Baked Potato"} price={10.00} meats={1} sides={"Sides:1"} img={threeMeat} description={"discription of the item"} />
+        <Meals mealName={"Catfish Basket"} price={10.00} img={threeMeat} description={"Served With 3 Pieces Of Catfish, Choice Of 1 Side And Hushpuppies"}/>
+        <Meals mealName={"French Dip Basket"} price={13.00}  img={threeMeat} description={"Sliced Beef On A French Roll Toasted With Provolone Cheese, Served With Au Jus' & Choice Of 1 Side"} />
+        <Meals mealName={"Grilled Chicken Basket"} price={12.00} img={threeMeat} description={"Grilled Chicken Sandwich Served With Lettuce, Tomato, & Pickles And Your Choice of 1 Side"} />
      
             </div>
             </div>
 
 
 
-            <div ref={deserts}   className='flex flex-col items-center align-center' >
-        <p className='p-3 bg-slate-200/80 items-center text-center text-[1.5rem] w-screen m-8' >Deserts</p>
+            <div ref={kidsMeals}  className='flex flex-col items-center align-center' >
+        <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8'>Kids Meals</p>
         <div className='flex items evenly justify-evenly gap-10 flex-1 flex-wrap '>
-        <Meals mealName={"Caramel Bunt Cake"} price={6.00} img={threeMeat} description={"discription of the item"}/>
-        <Meals mealName={"Cheese Cake"} price={4.50} img={threeMeat} description={"discription of the item"} />
-        <Meals mealName={"Cobbler Of The Day"} price={6.00} img={threeMeat} description={"discription of the item"} />
+        <Meals mealName={"Chicken Strip Basket"} price={8.00} img={threeMeat} description={"Served With 3 Chicken Strips, Gravy & Sourdough Toast and your choice of 1 Kids side and drink"}/>
+        <Meals mealName={"Kids Chopped Beef Dinner"} price={8.00} img={threeMeat} description={"Served with 1/3 lb. Of Chopped Beef and a slice of Sourdough Toast and your choice of 1 Kids side and drink "} />
+        <Meals mealName={"Grilled Cheeses Basket"} price={6.00} img={threeMeat} description={"Hearty Grilled Cheese Served with Pickles On The Side and your choice of 1 Kids side and drink"} />
+        <Meals mealName={"Kids Rib Basket"} price={9.00} img={threeMeat} description={"Comes With 1 Rib & Sourdough Toast and your choice of 1 Kids side and drink"} />
+        <div>
+        <button className='flex bg-slate-300 rounded h-[300px] outline'>
+       <div className=' flex flex-col justify-center items-start bg-red-600  h-[300px] w-[200px] p-2'>
+
+        <div className=' my-1 flex flex-col flex-1 w-[100%] justify-center items-center bg-black rounded'>
+            <h2 className='font-bold text-[1.4rem] text-white'>Kids Sides</h2>
+<div className='text-white border border-red-600 p-4 mt-5'>
+      <p>Mac & Cheese</p>
+      <p>French Fries</p>
+      <p>Tater Tots</p>
+      <p>Green Beans</p>
+
+</div>
+ 
+        </div>
+         </div>
+    </button>
+
+
+        </div>
             </div>
             </div>
 
-            <div ref={appetizers}  className='flex flex-col items-center align-center'  >
-        <p className='p-3 bg-slate-200/80 items-center text-center text-[1.5rem] w-screen m-8' >Appetizers</p>
+            <div ref={saladsPotato}   className='flex flex-col items-center align-center'  >
+        <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8' >Salads/Potato</p>
         <div className='flex items evenly justify-evenly gap-10 flex-1 flex-wrap '>
-        <Meals mealName={"Onion Rings with Cajun Ranch"} price={8.00} img={threeMeat} description={"discription of the item"}  />
-        <Meals mealName={"Queso, Salsa & Chips"} price={9.00} meats={'Meats: 1'} img={threeMeat} description={"discription of the item"}   />
-        <Meals mealName={"Loaded Fries"} price={8.00} meats={'Meats: 1'} img={threeMeat} description={"discription of the item"}  />
+        <Meals mealName={"BBQ Salad"} price={8.00} img={threeMeat} description={"Lettuce, Tomato, Onion, Cheese And A Boiled Egg With Your Choice Of BBQ Meat"}  />
+        <Meals mealName={"Cobb Salad"} price={9.00} img={threeMeat} description={"Lettuce, Tomato, Onion, Cheese, And Boiled Egg With Chopped Ham And Turkey"}   />
+        <Meals mealName={"Grilled Chicken Salad"} price={8.00}  img={threeMeat} description={"Lettuce, Tomato, Onion, Cheese, Sliced Avocado, Tortilla Strips And Grilled Chicken"}  />
+        <Meals mealName={"BBQ Loaded Baked Potato"} price={10.00}  img={threeMeat} description={"Served With Your Choice Of Sliced Beef, Pulled Pork, Sausage, Hotlinks or Grilled Chicken, Butter, Sour Cream, Cheese & Bacon Crumbles"}  />
      
             </div>
             </div>
 
 
-        <div ref={sides}   className='flex flex-col items-center align-center' >
-        <p className='p-3 bg-slate-200/80 items-center text-center text-[1.5rem] w-screen m-8' >Sides</p>
+
+
+        <div ref={appetizers}  className='flex flex-col items-center align-center' >
+        <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8'>Appetizers</p>
         <div className='flex items evenly justify-evenly gap-10 flex-1 flex-wrap '>
-        <Meals mealName={"Mac & Cheese"} price={3.00} img={threeMeat} description={"discription of the item"}/>
-        <Meals mealName={"Baked Beans"} price={3.00} img={threeMeat} description={"discription of the item"} />
-        <Meals mealName={"Pinto Beans"} price={3.00} img={threeMeat} description={"discription of the item"} />
-        <Meals mealName={"Green Beans"} price={3.00} img={threeMeat} description={"discription of the item"} />
-        <Meals mealName={"Potato Salad"} price={3.00} img={threeMeat} description={"discription of the item"}/>
-        <Meals mealName={"Coleslaw"} price={3.00} img={threeMeat} description={"discription of the item"} />
-        <Meals mealName={"Mashed Potatoes"} price={3.00} img={threeMeat} description={"discription of the item"} />
-        <Meals mealName={"Fried Okra"} price={3.00} img={threeMeat} description={"discription of the item"} />
-        <Meals mealName={"Diner Salad"} price={3.00} img={threeMeat} description={"discription of the item"}/>
-        <Meals mealName={"Baked Potato"} price={3.00} img={threeMeat} description={"discription of the item"} />
-        <Meals mealName={"French Fries"} price={3.00} img={threeMeat} description={"discription of the item"} />
-        <Meals mealName={"Tater Tots"} price={3.00} img={threeMeat} description={"discription of the item"} />
+        <Meals mealName={"Onion Rings With Cajun Ranch"} price={8.00} img={threeMeat} description={""}/>
+        <Meals mealName={"Queso, Salsa & Chips"} price={9.00} img={threeMeat} description={""} />
+        <Meals mealName={"Loaded Fries"} price={8.00} img={threeMeat} description={""} />
+            </div>
+            </div>
+
+
+            <div ref={sides}  className='flex flex-col items-center align-center' >
+        <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8'>Sides</p>
+        <div className='flex items-evenly justify-evenly gap-10 flex-1 flex-wrap '>
+      
+      <div className='w-fit h-fit bg-black text-white border border-red-500 border-[10px]'>
+        
+        
+
+               <div className=' flex flex-col justify-evenly gap-[10px] p-[20px] w-[250px]' >
+                <div className='justify-center flex font-semibold text-[1.5rem]'>Sides Alacarte $3</div>
+               <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>Mac & Cheese</p></div>
+                <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>Baked Beans</p></div>
+                <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>Pinto Beans</p></div>
+                <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>Green Beans</p></div>
+                <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>Potato Salad</p></div>
+                <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>Coleslaw</p></div>
+                <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>Mashed Potatoes</p></div>
+                <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>Fried Okra</p></div>
+                <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>French Fries</p></div>
+                <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>Tater Tots</p></div>
+                <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p className='text-nowrap' >Diner Salad</p> <p className='text-[0.8rem] text-nowrap'>(2$ Alacatrte)</p></div>
+                <div className='flex gap-1' > <span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p className='text-nowrap' >Baked Potato</p><p className='text-[0.8rem] text-nowrap '>(3$ Alacatrte)</p></div>
+               </div>
+      </div>
             </div>
             </div>
 
    
 
         <div ref={drinks}  className='flex flex-col items-center align-center pb-10' >
-        <p className='p-3 bg-slate-200/80 items-center text-center text-[1.5rem] w-screen m-8' >Drinks</p>
+        <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8' >Drinks $2.50</p>
+        <div className='flex justify-center items-center w-fit h-fit p-[30px] bg-black text-white gap-10 border border-red-500 border-[10px] '>
+        
+        
+        <div className='flex'>
+            {/* row 1  */}
+        <div className=' flex flex-col justify-evenly p-[20px]'>
+            <div className='flex gap-1'> <span><i className="fa-solid fa-circle text-[0.5rem]"></i></span> <p>Tea</p> </div>
+            <div className='flex gap-1'> <span><i className="fa-solid fa-circle text-[0.5rem]"></i></span> <p>Dr. Pepper</p> </div>
+            <div className='flex gap-1'> <span><i className="fa-solid fa-circle text-[0.5rem]"></i></span> <p> Diet Dr. Pepper</p> </div>
+            <div className='flex gap-1'> <span><i className="fa-solid fa-circle text-[0.5rem]"></i></span> <p>Pepsi</p> </div>
+            <div className='flex gap-1'> <span><i className="fa-solid fa-circle text-[0.5rem]"></i></span> <p>Pepsi Zero</p> </div>
+        </div>
+           {/* row 2   */}
+         <div className=' flex flex-col justify-evenly p-[20px]' >
+            <div className='flex gap-2'><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>Mountain Dew</p> </div>
+            <div className='flex gap-1'> <span><i className="fa-solid fa-circle text-[0.5rem]"></i></span> <p>RootBeer</p> </div>
+            <div className='flex gap-1'> <span><i className="fa-solid fa-circle text-[0.5rem]"></i></span> <p> Starry</p> </div>
+            <div className='flex gap-1'> <span><i className="fa-solid fa-circle text-[0.5rem]"></i></span> <p>Lemonade</p> </div>
+            </div>
+        </div>
+      
+            </div>
+            </div>
+
+            <div ref={desserts}  className='flex flex-col items-center align-center pb-10' >
+        <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8' >Desserts</p>
         <div className='flex items evenly justify-evenly gap-10 flex-1 flex-wrap '>
-        <Meals mealName={"Tea"} price={3.00} description={"Sweet Or Unsweet"} img={"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Iced_Tea_from_flickr.jpg/160px-Iced_Tea_from_flickr.jpg"}/>
-        <Meals mealName={"Dr. Pepper"} price={3.00}  img={"https://logos-world.net/wp-content/uploads/2021/08/Dr-Pepper-Logo.png"} />
-        <Meals mealName={"Diet Dr. Pepper"} price={3.00} description={"Diet"} img={"https://logos-world.net/wp-content/uploads/2021/08/Dr-Pepper-Logo.png"} />
-        <Meals mealName={"Pepsi"} price={3.00} img={"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Pepsi_2023.svg/1920px-Pepsi_2023.svg.png"} />
-        <Meals mealName={"Pepsi Zero"} price={3.00}  img={"https://www.sodacentre.com/cdn/shop/products/pepsizerosugar_1080x.jpg?v=1651194762"}/>
-        <Meals mealName={"Mountain Dew"} price={3.00}  img={"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mountain_Dew_logo.svg/400px-Mountain_Dew_logo.svg.png"} />
-        <Meals mealName={"RootBeer"} price={3.00}  img={"https://1000logos.net/wp-content/uploads/2022/05/AW-Root-Beer-Logo-2007.png"} />
-        <Meals mealName={"Starry"} price={3.00} img={"https://upload.wikimedia.org/wikipedia/commons/1/19/Starry_Lemon_Lime_Soda.svg"} />
-        <Meals mealName={"Lemonade"} price={3.00} description={"image coming soon"}  img={comingSoon}/>
+        <Meals mealName={"Cheese Cake"} price={4.50} description={"Sweet Or Unsweet"} img={"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Iced_Tea_from_flickr.jpg/160px-Iced_Tea_from_flickr.jpg"}/>
+        <Meals mealName={"Cobbler Of The Day"} price={6.00}  img={"https://logos-world.net/wp-content/uploads/2021/08/Dr-Pepper-Logo.png"} />
             </div>
             </div>
     

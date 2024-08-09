@@ -6,13 +6,14 @@ import storefront from '../assets/pexels-minan1398-1482803.jpg';
 import food from '../assets/pexels-pixabay-533325.jpg';
 import '../../src/index.css'; 
 import MapComponent from '../Components/MapComponent';
+import Logo from '../Components/Logo';
 
 
 
 export default function Home() {
-  let reviews = [["zero"],["review one"],["review two"],["review three"],["review four"],["review five "]]
+  let reviews = [["zero"],["I'm really glad this place opened. The food here is freshly prepared and served piping hot. The catfish is clean, light and crispy. The okra is fried just right. The pinto beans are very good. The brisket is tender and moist. The baked potatoes are served up just the way I like em. I highly recommend this place"],["Great BBQ and service. We had the sliced beef, chopped beef, and hot links with Mac & Cheese and Okra. All was fresh, hot, tender, and delicious."],["Great bbq beef SW and okra. I can't wait to go back for more. It is so nice to have an alternative to mexican food."],["Very good food. The BBQ sandwiches are my favorite but the burgers and CFS are also excellent. Service is very friendly and food usually comes out quickly."],["Great food and wonderful welcoming staff. It was a great place to see our friends that we haven’t seen in 10 years. They let us talk for hours, refilled our drinks and let us shut the place down."]]
 const [review, setReview] = useState(reviews[3])
-const [number, setNumber] = useState(3)
+const [number, setNumber] = useState(2)
 
 
 
@@ -62,21 +63,20 @@ function reviewUp(upBy) {
     <>
     <Header/>
       {/* menu */}
-      <div className=' flex flex-col bg-cover bg-center h-[450px] w-screen
-    items-center justify-evenly ' style={{ backgroundImage: `url(${ribs})` }}>
-      <div className=' flex items-center justify-center bg-slate-100 h-[200px] w-[200px] rounded-full'> 
-          Logo Here
+      <div className=' bg-sky-400 flex flex-col bg-cover bg-center h-[450px] w-screen items-center justify-evenly ' style={{ backgroundImage: `url(${ribs})` }}>
+
+      <div className=''> 
+          <Logo/>
          </div>
-         <div className='bg-slate-100/90 rounded-full'>
+         {/* <div className='bg-slate-100/90 rounded-full'>
          <p className='text-slate-950 px-[40px] py-[5px] text-lg font-[900]'>Best BBQ in Oklahoma</p>
-         </div>
-<a href='order' className=' flex items-center justify-center text-slate-100 bg-red-700 border-2 p-1 rounded w-[30%] hover:bg-red-600'>View Menu</a>
+         </div> */}
+<a href='order' className='absolute top-[500px] flex items-center justify-center text-slate-100 bg-red-700 border-2 p-1 rounded w-[30%] hover:bg-red-600'>View Menu</a>
     </div>
 
     {/* address  */}
-    <div className='bg-amber-100 flex flex-col items-center p-1'>
-      <div onClick={ () => {window.location.href='#map'}}><i className=" text-red-700 fa-solid fa-location-dot"></i></div>
-      <a href='https://www.google.com/maps/place/Wynnewood,+OK+73098/@34.6426009,-97.1623665,15z/data=!3m1!4b1!4m6!3m5!1s0x87b2de0260150331:0x2df50c940a2315e6!8m2!3d34.6434171!4d-97.1644656!16zL20vMHo2MDU?entry=ttu' target='_blank' className='font-semibold underline text-blue-700 pb-3'>123 N Kerr Blvd Wynnewood OK</a>
+    <div className='bg-black h-[20px]  flex flex-col items-center p-1'>
+
     </div>
   
   {/* box 1  */}
@@ -86,8 +86,8 @@ function reviewUp(upBy) {
     items-center justify-center' style={{ backgroundImage: `url(${storefront})` }}  >
     </div>
     {/* pick up  */}
-    <div className='bg-amber-50 flex flex-col items-center justify-evenly  w-screen min-w-[50%] h-[400px] px-[30px]'>
-      <h2 className='font-medium text-[1.9rem]'>View Our Menu</h2>
+    <div className='bg-slate-50 flex flex-col items-center justify-evenly  w-screen min-w-[50%] h-[400px] px-[30px]'>
+      <h2 className='font- text-[1.9rem]'>View Our Menu</h2>
       <p className=''>Take a look at all the food we serve and see details about our menu</p>
       <div><a href='order' className=' bg-red-700 text-slate-100 p-4 py-2 rounded hover:bg-red-600' >Menu</a></div>
     </div>
@@ -100,7 +100,7 @@ function reviewUp(upBy) {
     items-center justify-center' style={{ backgroundImage: `url(${food})` }}  >
     </div>
 {/* cater */}
-    <div className=' p-10 bg-amber-50 flex flex-col items-center justify-evenly w-page h-auto px-[30px] min-w-[50%]'>
+    <div className=' p-10 bg-white flex flex-col items-center justify-evenly w-page h-auto px-[30px] min-w-[50%]'>
       <h2 className='font-medium text-[1.9rem]' >Catering</h2>
       <p className='p-10'>Have a big event or wedding coming up soon? let us take the stress out of feeding everyone by allowing us to cater for you!</p>
       <div><a href='catering'  className='bg-red-700 text-slate-100 p-4 py-2 rounded hover:bg-red-600 ' >Request Catering</a></div>
@@ -114,7 +114,7 @@ function reviewUp(upBy) {
     items-center justify-center' style={{ backgroundImage: `url(${food})` }}  >
     </div>
 {/* about us  */}
-    <div className='bg-amber-50 flex flex-col items-center justify-evenly  w-screen min-w-[50%] h-[350px] px-[30px]'>
+    <div className='bg-white flex flex-col items-center justify-evenly  w-screen min-w-[50%] h-[350px] px-[30px]'>
       <h2 className=' font-medium text-[1.9rem]' >About Us</h2>
       <h2>We know our BBQ</h2>
       <p className=''>This will be an about allisa page telling about her food and anything else you would want here </p>
@@ -131,11 +131,11 @@ function reviewUp(upBy) {
     
 
     {/* reviews  */}
-    <div id='maps' className='bg-zinc-50 flex flex-col items-center justify-evenly  w-screen min-w-[50%] h-[350px] px-[30px]'>
+    <div id='maps' className='bg-white flex flex-col items-center justify-evenly  w-screen min-w-[50%] h-[350px] px-[30px]'>
       <h2 className='font-medium text-[1.7rem]'>What People Are Saying</h2>
       <div className='flex justify-center items-center min-w-[100%] '>
         <button onClick={() => {clickedReview("down")}}> <i className="fa-solid fa-angle-left rounded hover:bg-slate-300"></i> </button> 
-        <p className='flex flex-1 justify-center px-[30px]'>{review}</p>
+        <p className='flex flex-1 text-center text-[0.9rem] justify-center items-center overflow-auto h-[170px] px-[30px]'>{review}</p>
         <button onClick={() => {clickedReview("up")}}> <i className="fa-solid fa-angle-right rounded hover:bg-slate-300"></i></button> 
       </div>
  
@@ -150,9 +150,8 @@ function reviewUp(upBy) {
     </div>
   </div>
 {/* contact */}
-<div className='bg-amber-50 flex flex-col items-center justify-evenly w-page h-fit gap-2 p-3 '>
+<div className='bg-black text-white flex flex-col items-center justify-evenly w-page h-fit gap-2 p-3 '>
       <h2 className='text-[1.9rem]' >Contact us</h2>
-      <h2>Email: <span className='font-bold'>ouremail@gmail.com</span></h2>
       <h2>Store Phone: <span className='font-bold'>(405) 123-1234</span></h2>
 
     </div>

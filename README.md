@@ -6,3 +6,9 @@ This app was created created with React.JS and Tailwind CSS, and is a sleek, fiv
 
 
 (Most of the logos and images have been removed and replaced with generic stock images and names for privacy reasons and to make this code easier to use as a quick template)
+
+
+
+
+
+
