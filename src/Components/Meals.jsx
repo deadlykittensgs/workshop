@@ -15,9 +15,9 @@ export default function Meals({mealName,price,meats,sides,select, img, descripti
        <div className=' flex flex-col justify-center items-start bg-red-600  h-[300px] w-[200px] p-2'>
         <img className=' h-[100px] w-[100%]' src={img} alt="food img" />
         <div className=' my-1 flex flex-col flex-1 w-[100%] justify-center items-center bg-black rounded overflow-auto'>
-        <div className='text-white text-[1.3rem]'>{mealName}</div>
+        <div className='text-white px-2 text-[1.3rem]'>{mealName}</div>
         <p className='text-white'>${price}</p>
-          <p className='text-white text-[0.9rem] overflow-auto'>{description}</p>
+          <p className='text-white text-[0.9rem] px-2 overflow-auto'>{description}</p>
           <p className=' text-[0.7rem] text-white' >{details}</p>
         </div>
          </div>
