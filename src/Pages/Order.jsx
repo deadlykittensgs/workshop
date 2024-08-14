@@ -16,7 +16,7 @@ export default function Order() {
         console.log("clicked")
     }
 
-    const diners = useRef(null);
+    const dinners = useRef(null);
     const specialtyDinners = useRef(null);
     const bBQBaskets = useRef(null);
     const burgerBaskets = useRef(null);
@@ -45,8 +45,8 @@ export default function Order() {
     <Header/>
     <div className='flex flex-col'>
         <div className='flex justify-evenly h-fit w-[100%] bg-black/50 text-white overflow-auto sticky top-[110px]'>
-            <button  onClick={ () => handleScroll(diners)} className=' hover:text-black hover:bg-slate-100 p-3' >Diners</button>
-            <button  onClick={ () => handleScroll(specialtyDinners)} className='hover:text-black hover:bg-slate-100 p-3' >Specialty Diners</button>
+            <button  onClick={ () => handleScroll(dinners)} className=' hover:text-black hover:bg-slate-100 p-3' >Dinners</button>
+            <button  onClick={ () => handleScroll(specialtyDinners)} className='hover:text-black hover:bg-slate-100 p-3' >Specialty Dinners</button>
             <button  onClick={ () => handleScroll(bBQBaskets)} className='hover:text-black hover:bg-slate-100 p-3' >BBQ Baskets</button>
             <button  onClick={ () => handleScroll(burgerBaskets)} className='hover:text-black hover:bg-slate-100 p-3' >Burger Baskets</button>
             <button  onClick={ () => handleScroll(specialtyBaskets)} className='hover:text-black hover:bg-slate-100 p-3' >Specialty Baskets</button>
@@ -60,17 +60,17 @@ export default function Order() {
 
       {/* meals start */}
 
-        <div ref={diners}  className='flex flex-col items-center align-center' > 
+        <div ref={dinners}  className='flex flex-col items-center align-center' > 
         <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8' >Dinners</p>
         <div className='flex items evenly justify-evenly gap-10 flex-1 flex-wrap '>
-        <Meals mealName={"Sliced Beef Diner"} price={16.00} description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
-        <Meals mealName={"Chopped Beef Diner"} price={16.00}  description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
+        <Meals mealName={"Sliced Beef Dinner"} price={16.00} description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
+        <Meals mealName={"Chopped Beef Dinner"} price={16.00}  description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
         <Meals mealName={"Rib Dinner"} price={16.00}  description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
-        <Meals mealName={"Sausage Diner"} price={15.00}   description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
-        <Meals mealName={"Hot Link Diner"} price={15.00}  description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
-        <Meals mealName={"Pulled Pork Diner"} price={15.00}  description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
-        <Meals mealName={"2 Meat Diner"} details={"No Double meat"} price={18.00} description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
-        <Meals mealName={"3 Meat Diner"} details={"No Double meat"} price={20.00} description={"sliced beef on a bun with a roll and hushpuppy"} img={threeMeat}/>
+        <Meals mealName={"Sausage Dinner"} price={15.00}   description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
+        <Meals mealName={"Hot Link Dinner"} price={15.00}  description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
+        <Meals mealName={"Pulled Pork Dinner"} price={15.00}  description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
+        <Meals mealName={"2 Meat Dinner"} details={"No Double meat"} price={18.00} description={"Served With 2 Sides & Sourdough Toast"} img={threeMeat}/>
+        <Meals mealName={"3 Meat Dinner"} details={"No Double meat"} price={20.00} description={"sliced beef on a bun with a roll and hushpuppy"} img={threeMeat}/>
         </div>
         </div>
 
@@ -187,7 +187,7 @@ export default function Order() {
 
 
             <div ref={sides}  className='flex flex-col items-center align-center' >
-        <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8'>Sides</p>
+        <p className=' p-4 font-bold bg-slate-200/80 items-center text-center text-[1.8rem] w-screen m-8'>Sides $3</p>
         <div className='flex items-evenly justify-evenly gap-10 flex-1 flex-wrap '>
       
       <div className='w-fit h-fit bg-black text-white border border-red-500 border-[10px]'>
@@ -195,7 +195,6 @@ export default function Order() {
         
 
                <div className=' flex flex-col justify-evenly gap-[10px] p-[20px] w-[250px]' >
-                <div className='justify-center flex font-semibold text-[1.5rem]'>Sides Alacarte $3</div>
                <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>Mac & Cheese</p></div>
                 <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>Baked Beans</p></div>
                 <div className='flex gap-1' ><span><i className="fa-solid fa-circle text-[0.5rem]"></i></span><p>Pinto Beans</p></div>
